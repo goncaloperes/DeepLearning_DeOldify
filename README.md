@@ -1,16 +1,24 @@
 
 # DeOldify
 
-Image [<img src="https://colab.research.google.com/assets/colab-badge.svg" align="center">](https://colab.research.google.com/github/jantic/DeOldify/blob/master/ImageColorizerColab.ipynb) |
+**Quick Start**: The easiest way to colorize images using DeOldify (for free!) is here: [DeOldify Image Colorization on DeepAI](https://deepai.org/machine-learning-model/colorizer)
+
+The **most advanced** version of DeOldify image colorization is available here, exclusively.  Try a few images for free! [MyHeritiage In Color](https://www.myheritage.com/incolor)
+
+----------------------------
+
+Image (artistic) [<img src="https://colab.research.google.com/assets/colab-badge.svg" align="center">](https://colab.research.google.com/github/jantic/DeOldify/blob/master/ImageColorizerColab.ipynb) |
 Video [<img src="https://colab.research.google.com/assets/colab-badge.svg" align="center">](https://colab.research.google.com/github/jantic/DeOldify/blob/master/VideoColorizerColab.ipynb)
 
-**NEW** For those of you who are looking for a quick and easy way to run the open source version of DeOldify, for free, try this!  I love this implementation: [DeOldify Image Colorization on DeepAI](https://deepai.org/machine-learning-model/colorizer)
+**NEW** Having trouble with the default image colorizer, aka "artistic"?  Try the "stable" one below.  It generally won't produce colors that are as interesting as "artistic", but the glitches are noticeably reduced.  
+
+Image (stable) [<img src="https://colab.research.google.com/assets/colab-badge.svg" align="center">](https://colab.research.google.com/github/jantic/DeOldify/blob/master/ImageColorizerColabStable.ipynb)
 
 Instructions on how to use the Colabs above have been kindly provided in video tutorial form by Old Ireland in Colour's John Breslin.  It's great! Click video image below to watch.
 
 [![](http://img.youtube.com/vi/VaEl0faDw38/0.jpg)](http://www.youtube.com/watch?v=VaEl0faDw38)
 
-Get more updates on [Twitter <img src="resource_images/Twitter_Social_Icon_Rounded_Square_Color.svg" width="16">](https://twitter.com/citnaj).
+Get more updates on [Twitter <img src="resource_images/Twitter_Social_Icon_Rounded_Square_Color.svg" width="16">](https://twitter.com/DeOldify).
 
 
 ## Table of Contents
@@ -222,7 +230,7 @@ Special thanks to Matt Robinson and María Benavente for their image Colab noteb
 
 * **(Training Only) BEEFY Graphics card**.  I'd really like to have more memory than the 11 GB in my GeForce 1080TI (11GB).  You'll have a tough time with less.  The Generators and Critic are ridiculously large.  
 * **(Colorization Alone) A decent graphics card**. Approximately 4GB+ memory video cards should be sufficient.
-* **Linux (or maybe Windows 10)**  I'm using Ubuntu 16.04, but nothing about this precludes Windows 10 support as far as I know.  I just haven't tested it and am not going to make it a priority for now.  
+* **Linux**.  I'm using Ubuntu 18.04, and I know 16.04 works fine too.  **Windows is not supported and any issues brought up related to this will not be investigated.**
 
 #### Easy Install
 
@@ -289,6 +297,7 @@ Building Docker
 ```console
 cd DeOldify && docker build -t deoldify_api -f Dockerfile-api .
 ```
+> **Note:** The above command produces a docker image configured for image processing.  To build a docker image for video processing, edit the Dockerfile-api file, replacing `CMD ["app.py"]` with `CMD ["app-video.py"]`
 
 Running Docker
 ```console
@@ -324,27 +333,27 @@ The colorization inference notebooks should be able to guide you from here. The 
 
 ### Completed Generator Weights
 
-- [Artistic](https://www.dropbox.com/s/zkehq1uwahhbc2o/ColorizeArtistic_gen.pth?dl=0)
-- [Stable](https://www.dropbox.com/s/mwjep3vyqk5mkjc/ColorizeStable_gen.pth?dl=0)
-- [Video](https://www.dropbox.com/s/336vn9y4qwyg9yz/ColorizeVideo_gen.pth?dl=0)
+- [Artistic](https://data.deepai.org/deoldify/ColorizeArtistic_gen.pth)
+- [Stable](https://www.dropbox.com/s/usf7uifrctqw9rl/ColorizeStable_gen.pth?dl=0)
+- [Video](https://data.deepai.org/deoldify/ColorizeVideo_gen.pth)
 
 ### Completed Critic Weights
 
-- [Artistic](https://www.dropbox.com/s/8g5txfzt2fw8mf5/ColorizeArtistic_crit.pth?dl=0)
-- [Stable](https://www.dropbox.com/s/7a8u20e7xdu1dtd/ColorizeStable_crit.pth?dl=0)
-- [Video](https://www.dropbox.com/s/0401djgo1dfxdzt/ColorizeVideo_crit.pth?dl=0)
+- [Artistic](https://www.dropbox.com/s/1qd663zbk6ntzuy/ColorizeArtistic_crit.pth?dl=0)
+- [Stable](https://www.dropbox.com/s/wlqu6w88qwzcvfn/ColorizeStable_crit.pth?dl=0)
+- [Video](https://www.dropbox.com/s/oyl6qmwpdvpm95d/ColorizeVideo_crit.pth?dl=0)
 
 ### Pretrain Only Generator Weights
 
-- [Artistic](https://www.dropbox.com/s/9zexurvrve141n9/ColorizeArtistic_PretrainOnly_gen.pth?dl=0)
-- [Stable](https://www.dropbox.com/s/mdnuo1563bb8nh4/ColorizeStable_PretrainOnly_gen.pth?dl=0)
-- [Video](https://www.dropbox.com/s/avzixh1ujf86e8x/ColorizeVideo_PretrainOnly_gen.pth?dl=0)
+- [Artistic](https://www.dropbox.com/s/lbuv6911aivm9zi/ColorizeArtistic_PretrainOnly_gen.pth?dl=0)
+- [Stable](https://www.dropbox.com/s/6ita1pwyqjsmx4p/ColorizeStable_PretrainOnly_gen.pth?dl=0)
+- [Video](https://www.dropbox.com/s/tl4uzkwwapz68ca/ColorizeVideo_PretrainOnly_gen.pth?dl=0)
 
 ### Pretrain Only Critic Weights
 
-- [Artistic](https://www.dropbox.com/s/lakxe8akzjgjnmh/ColorizeArtistic_PretrainOnly_crit.pth?dl=0)
-- [Stable](https://www.dropbox.com/s/b3wka56iyv1fvdc/ColorizeStable_PretrainOnly_crit.pth?dl=0)
-- [Video](https://www.dropbox.com/s/j7og84cbhpa94gs/ColorizeVideo_PretrainOnly_crit.pth?dl=0)
+- [Artistic](https://www.dropbox.com/s/6td494kcjqfmh26/ColorizeArtistic_PretrainOnly_crit.pth?dl=0)
+- [Stable](https://www.dropbox.com/s/houkmrdivbia7z8/ColorizeStable_PretrainOnly_crit.pth?dl=0)
+- [Video](https://www.dropbox.com/s/80wpz16x7yudblh/ColorizeVideo_PretrainOnly_crit.pth?dl=0)
 
 ## Want the Old DeOldify?
 
@@ -352,10 +361,26 @@ We suspect some of you are going to want access to the original DeOldify model f
 
 ## Want More?
 
-Follow [#DeOldify](https://twitter.com/search?q=%23Deoldify) or [Jason Antic](https://twitter.com/citnaj) on Twitter.
+Follow [#DeOldify](https://twitter.com/search?q=%23Deoldify) on Twitter.
 
 ## License
 
 All code in this repository is under the MIT license as specified by the LICENSE file.
 
 The model weights listed in this readme under the "Pretrained Weights" section are trained by ourselves and are released under the MIT license.
+
+## A Statement on Open Source Support
+
+We believe that open source has done a lot of good for the world.  After all, DeOldify simply wouldn't exist without it. But we also believe that there needs to be boundaries on just how much is reasonable to be expected from an open source project maintained by just two developers.
+
+Our stance is that we're providing the code and documentation on research that we believe is beneficial to the world.  What we have provided are novel takes on colorization, GANs, and video that are hopefully somewhat friendly for developers and researchers to learn from and adopt. This is the culmination of well over a year of continuous work, free for you. What wasn't free was shouldered by us, the developers.  We left our jobs, bought expensive GPUs, and had huge electric bills as a result of dedicating ourselves to this.
+
+What we haven't provided here is a ready to use free "product" or "app", and we don't ever intend on providing that.  It's going to remain a Linux based project without Windows support, coded in Python, and requiring people to have some extra technical background to be comfortable using it.  Others have stepped in with their own apps made with DeOldify, some paid and some free, which is what we want! We're instead focusing on what we believe we can do best- making better commercial models that people will pay for.  
+Does that mean you're not getting the very best for free?  Of course. We simply don't believe that we're obligated to provide that, nor is it feasible! We compete on research and sell that.  Not a GUI or web service that wraps said research- that part isn't something we're going to be great at anyways. We're not about to shoot ourselves in the foot by giving away our actual competitive advantage for free, quite frankly.
+
+We're also not willing to go down the rabbit hole of providing endless, open ended and personalized support on this open source project.  Our position is this:  If you have the proper background and resources, the project provides more than enough to get you started. We know this because we've seen plenty of people using it and making money off of their own projects with it.  
+
+Thus, if you have an issue come up and it happens to be an actual bug that having it be fixed will benefit users generally, then great- that's something we'll be happy to look into. 
+
+In contrast, if you're asking about something that really amounts to asking for personalized and time consuming support that won't benefit anybody else, we're not going to help. It's simply not in our interest to do that. We have bills to pay, after all. And if you're asking for help on something that can already be derived from the documentation or code?  That's simply annoying, and we're not going to pretend to be ok with that.
+
