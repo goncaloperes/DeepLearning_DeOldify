@@ -3,9 +3,11 @@
 
 **Quick Start**: The easiest way to colorize images using open source DeOldify (for free!) is here: [DeOldify Image Colorization on DeepAI](https://deepai.org/machine-learning-model/colorizer)
 
-**Desktop (New)**: Want to run open source DeOldify for photos on Windows desktop. ColorfulSoft made such a thing here and it really works-  https://github.com/ColorfulSoft/DeOldify.NET . No GPU required!
+**Desktop (New)**: Want to run open source DeOldify for photos on Windows desktop? ColorfulSoft made such a thing here and it really works-  https://github.com/ColorfulSoft/DeOldify.NET . No GPU required!
 
 The **most advanced** version of DeOldify image colorization is available here, exclusively.  Try a few images for free! [MyHeritage In Color](https://www.myheritage.com/incolor)
+
+**Huggingface Web Demo (New)**: Integrated to [Huggingface Spaces](https://huggingface.co/spaces) with [Gradio](https://github.com/gradio-app/gradio). See demo: [![Hugging Face Spaces](https://img.shields.io/badge/%F0%9F%A4%97%20Hugging%20Face-Spaces-blue)](https://huggingface.co/spaces/akhaliq/deoldify)
 
 ----------------------------
 
@@ -256,6 +258,8 @@ jupyter lab
 From there you can start running the notebooks in Jupyter Lab, via the url they provide you in the console.  
 
 > **Note:** You can also now do "conda activate deoldify" if you have the latest version of conda and in fact that's now recommended. But a lot of people don't have that yet so I'm not going to make it the default instruction here yet.
+
+**Alternative Install:** User daddyparodz has kindly created an installer script for Ubuntu, and in particular Ubuntu on WSL, that may make things easier:  https://github.com/daddyparodz/AutoDeOldifyLocal
 
 #### Note on test_images Folder
 

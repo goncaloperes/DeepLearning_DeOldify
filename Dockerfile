@@ -4,7 +4,13 @@ RUN apt-get -y update && apt-get install -y \
 	python3-pip \
 	software-properties-common \
 	wget \
+	ca-certificates \
+	libcurl4-openssl-dev \
+	libssl-dev \
 	ffmpeg
+
+RUN apt-get clean
+RUN update-ca-certificates -f
 
 RUN mkdir -p /root/.torch/models
 
@@ -28,7 +34,6 @@ RUN pip install --upgrade pip \
 		numpy==1.16 \
 		scikit-image==0.15.0 \
 		requests==2.21.0 \
-		ffmpeg==1.4 \
 		ffmpeg-python==0.1.17 \
 		youtube-dl>=2019.4.17 \
 		jupyterlab==1.2.4 \
